@@ -18,8 +18,6 @@ public class Question implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private Integer id;
-	//@ManyToOne
-	//@JoinColumn(name="idLevel" referenceColumnName="id");
 	private Integer idLevel;
 	private String description;
 	

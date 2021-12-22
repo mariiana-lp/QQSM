@@ -19,8 +19,6 @@ public class Level implements Serializable {
 	private Integer id;
 	private String name;
 	
-	//@OneToMany(mappedBy="level");
-	//Collection<level>levels;
 	public Integer getId() {
 		return id;
 	}
