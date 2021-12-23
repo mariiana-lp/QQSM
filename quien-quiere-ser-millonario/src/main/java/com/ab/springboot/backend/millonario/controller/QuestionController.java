@@ -1,5 +1,7 @@
 package com.ab.springboot.backend.millonario.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +19,14 @@ public class QuestionController {
 	@Autowired
 	private QuestionService questionService;
 	
-	@GetMapping("/question/{id}")
-	public Question show(@PathVariable Integer id) {
+	@GetMapping("/questionId/{id}")
+	public Question showQuestion(@PathVariable Integer id) {
 		return questionService.findById(id);
 	}
 
+	@GetMapping("/questions/{idLevel}")
+	public List<Question> showQuestions(@PathVariable Integer idLevel) {
+		return questionService.findByIdLevel(idLevel);
+	}
 
 }

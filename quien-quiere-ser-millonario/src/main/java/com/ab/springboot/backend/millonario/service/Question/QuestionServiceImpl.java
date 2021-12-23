@@ -1,5 +1,7 @@
 package com.ab.springboot.backend.millonario.service.Question;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,10 +17,18 @@ public class QuestionServiceImpl implements QuestionService{
 	
 	@Override
 	@Transactional(readOnly = true)
+	public List<Question> findByIdLevel(Integer idLevel) {
+		// TODO Auto-generated method stub
+		return questionDao.findByIdLevel(idLevel);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
 	public Question findById(Integer id) {
 		// TODO Auto-generated method stub
-		return questionDao.findById(id).orElse(null);
+		return (Question) questionDao.findById(id);
 	}
-	
+
+
 
 }

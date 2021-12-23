@@ -34,8 +34,8 @@ public class Question implements Serializable{
 		return idLevel;
 	}
 
-	public void setIdLevel(Integer idLevel) {
-		this.idLevel = idLevel;
+	public void setIdLevel(Integer idLevels) {
+		this.idLevel = idLevels;
 	}
 
 	public String getDescription() {

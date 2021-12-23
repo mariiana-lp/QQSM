@@ -1,5 +1,7 @@
 package com.ab.springboot.backend.millonario.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +19,13 @@ public class OptionController {
 	@Autowired
 	private OptionService optionService;
 	
-	@GetMapping("/option/{id}")
-	public Options show(@PathVariable Integer id) {
+	@GetMapping("/optionId/{id}")
+	public Options showOption(@PathVariable Integer id) {
 		return optionService.findById(id);
+	}
+
+	@GetMapping("/options/{idQuestion}")
+	public List<Options> showOptions(@PathVariable Integer idQuestion) {
+		return optionService.findByIdOptions(idQuestion);
 	}
 }
